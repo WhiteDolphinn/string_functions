@@ -162,7 +162,7 @@ ssize_t my_getline(char** lineptr, size_t* n, FILE* stream)
 {
     *n = 10;
     if(*lineptr != 0)
-        *lineptr = (char*)malloc(sizeof(char) * (*n));
+        *lineptr = (char*)calloc(*n, sizeof(char));
     else
     {
         *n = -1;
